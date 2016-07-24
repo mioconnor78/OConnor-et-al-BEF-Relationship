@@ -13,7 +13,7 @@ library(dplyr)
 library(ggplot2)
 library(ggExtra)
 
-data <- read.csv("./data/SST5.csv")
+data <- read.csv("./data/OConnor et al datafile.csv")
 data <- data[,-1]
 data$TG1 <- as.factor(data$TG1)
 mod4 <- lmer(logY.rs ~ logSc*Sys1*TG1 + log(Tscale) + (1 + logSc|Entry) + (1 + logSc|ExptA) + (1 + logSc|Study), data=data, REML = TRUE, na.action=na.omit)
